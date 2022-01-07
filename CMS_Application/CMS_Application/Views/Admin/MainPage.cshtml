@@ -1,0 +1,59 @@
+﻿
+
+@using CMS_Applicaion.Models
+@{
+    Layout = "~/Views/Shared/_Layout4.cshtml";
+}
+<div class="col-sm-12 col-md-12 col-lg-12 px-3">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            <a asp-controller="Admin" asp-route-id="@Model.Id" asp-action="AllStudent" class="text-white">
+                <div class="card my-2">
+                    <img class="card-img item-card" src="/Images/Students.jpg" alt="Students" style="height:250px">
+                    <div class="card-body bg-primary text-white">
+                        <h5 class="card-title">Students</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            <a asp-controller="Admin" asp-route-id="@Model.Id" asp-action="AllTeacher" class="text-white">
+                <div class="card my-2">
+                    <img class="card-img item-card" src="/Images/Teachers.png" alt="Teachers" style="height:250px">
+                    <div class="card-body bg-warning text-white">
+                        <h5 class="card-title">Teachers</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            <a href="#" class="text-white">
+                <div class="card my-2">
+                    <img class="card-img item-card" src="/Images/AddSubject.png" alt="Add Subject Requests" style="height:250px">
+                    <div class="card-body bg-success text-white">
+                        <h5 class="card-title">Add Subject Requests</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            <a href="#" class="text-white">
+                <div class="card my-2">
+                    <img class="card-img item-card" src="/Images/DropSubject1.jpg" alt="Drop Subject Requests" style="height:250px">
+                    <div class="card-body bg-danger text-white">
+                        <h5 class="card-title">Drop Subject Requests</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+﻿@using CMS_Applicaion.Models
+@{
+    Layout = "~/Views/Shared/_Layout4.cshtml";
+}
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-6">
+        <h2 class="ml-3 text-primary">All Teachers</h2>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-5 d-flex align-items-end justify-content-end mb-3">
+        <a class="btn btn-info" asp-controller="Admin" asp-action="AddTeacher" asp-route-id="@Model.Id">Add Teacher</a>
+    </div>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-12 px-3">
+    <table class="table table-striped table-light">
+        <thead>
+            <tr class="bg-primary text-white">
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone No</th>
+                <th scope="col">Degree</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Teacher t in Model.teachers)
+            {
+                <tr>
+                    <td>@t.Name</td>
+                    <td>@t.Address</td>
+                    <td>@t.PhoneNo</td>
+                    <td>@t.Degree</td>
+                    <td><a class="btn btn-info" asp-controller="Admin" asp-action="EditTeacher" asp-route-aid="@Model.Id" asp-route-id="@t.Id">Edit</a></td>
+                    <td><a class="btn btn-danger" asp-controller="Admin" asp-action="RemoveTeacher" asp-route-aid="@Model.Id" asp-route-id="@t.Id">Remove</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,109 @@
+﻿@using CMS_Application.Models
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+
+    <style>
+         *{
+            font-family: serif;
+        }
+        .field-validation-error {
+            color: red;
+        }
+
+        .input-validation-error {
+            border: 1px solid red;
+            background-color: salmon;
+        }
+
+        .selected-post {
+            margin: auto;
+            border: 0.5px solid #1e1e1e;
+            padding: 10px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .HomeDisplay {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .post-body {
+            width: 50%;
+        }
+
+        .UserInfo {
+            width: 50%;
+        }
+
+        .Form {
+            margin: auto;
+            margin-top: 70px;
+            width: 50%;
+            border: 0.5px solid;
+            padding: 10px;
+        }
+
+
+  
+.side_navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 75%;
+  overflow: auto;
+}
+
+.side_navbar li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+side_navbar li a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+ .side_navbar li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="row mt-3">
+        <div class="col-sm-4 col-md-4 col-lg-3">
+            <div class="ml-5"><img src="/Images/cms2.jpg" style="max-width:100px" /></div>
+        </div>
+        <div class="col-sm-8 col-md-8 col-lg-9">
+            <h1 class="mt-4 mb-4 ml-5" style="font-family: serif; color: #2F71B2">CAMPUS MANAGEMENT SYSTEM</h1>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+            <ul class=" side_navbar ml-3">
+                <li class="bg-primary"><a class="active text-white" asp-controller="Student" asp-action="ShowHomePage" asp-route-id="@Model.Id"><b>Home</b></a></li>
+                <li class="mt-3 mb-3"><h4>&nbsp Welcome, @Model.Name</h4></li>
+                <li class="mt-2 bg-info"><a class="text-white" asp-controller="Home" asp-action="Index"><b>Logout</b></a></li>
+                <li class="mt-2 bg-info"><a class=" text-white" asp-controller="Class" asp-action="AddSubject" asp-route-id="@Model.Id"><b>Add Subject</b></a></li>
+                <li class="mt-2 bg-info"><a class=" text-white" asp-controller="Class" asp-action="DropSubject" asp-route-id="@Model.Id"><b>Drop Subject</b></a></li>
+            </ul>
+            <div>
+                <div style="margin-left:26%;padding:1px 16px;">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+        
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@using CMS_Applicaion.Models
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<h2 class="ml-3 text-primary">Teacher Classroom Portal</h2>
+<div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="row">
+        @foreach (Class c in Model.Courses)
+        {
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <a href="#" class="text-info">
+                    <div class="card my-2 bg-light">
+                        <div class="card-body text-dark">
+                            <h4 class="card-title text-dark">@c.Name</h4>
+                            <ul>
+                                <li><a href="#Attendanve">Attendence</a></li>
+                                <li><a href="#GradeBook">GradeBook</a></li>
+                                <li><a href="#Announcement">Announcements</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

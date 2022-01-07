@@ -1,0 +1,55 @@
+﻿@using CMS_Applicaion.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<h2 class="ml-3 text-primary">Drop Course</h2>
+<div class="col-sm-10 col-md-10 col-lg-10 px-3">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <a href="#" class="text-dark">
+                <div class="card my-2 bg-light">
+                    <div class="card-body text-dark">
+                        <h4 class="mb-2 text-dark">
+                            Courses :
+                        </h4>
+                        <h4>
+                            <form>
+                                <select id="courses" onclick="selectedCourse" style="height:38px">
+                                    @foreach (Class c in Model.Courses)
+                                    {
+                                        <option value="@c.Name">@c.Name</option>
+                                    }
+
+                                </select>
+
+                                <a id="courseName" class="btn btn-primary text-white ml-4" onclick="setRouteParameter()">
+                                    Search
+                                </a>
+                            </form>
+                        </h4>
+
+
+
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
+<script>
+    function setRouteParameter() {
+        var id = document.getElementById("courses").value;
+        location.replace('http://localhost:32387/Class/SearchDropCourse?id='+'@Model.Id'+'&&c1='+id);
+    }
+</script>
+
+
+
+
+
+

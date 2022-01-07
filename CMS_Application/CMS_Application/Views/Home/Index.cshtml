@@ -1,0 +1,25 @@
+﻿@using CMS_Applicaion.Models
+@model Person
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<div class="b border border-primary p-3 mt-3 bg-light" style="width:400px">
+    <h3 class="bg-primary text-white text-center p-2">Login</h3>
+    <form method="post" action="/Home/Index">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <label class="form-label" asp-for="UserId"></label><br>
+            <input class="form-control" asp-for="UserId">
+            <span asp-validation-for="UserId"></span><br>
+        </div>
+        <div>
+            <label class="form-label" asp-for="Password"></label><br>
+            <input class="form-control" asp-for="Password">
+            <span asp-validation-for="Password"></span><br>
+        </div>
+
+        <input class="btn btn-primary" type="submit" value="Login" />
+    </form>
+
+
+</div>

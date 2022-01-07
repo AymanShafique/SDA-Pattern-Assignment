@@ -1,0 +1,50 @@
+﻿
+@using CMS_Applicaion.Models
+@model Teacher
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<div class="b border border-primary p-3 mt-3 bg-light ml-5 mb-5 w-50">
+
+    <h3 class="bg-primary text-white text-center p-2">Edit Teacher</h3>
+    <form method="post" action="/Admin/EditTeacher">
+        <div class="row">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div>
+                <input type="hidden" class="form-control" asp-for="Id" readonly>
+                <span asp-validation-for="Id"></span><br>
+            </div>
+            <div class="col-lg-6">
+                <label class="form-label" asp-for="Name"></label><br>
+                <input class="form-control" asp-for="Name">
+                <span asp-validation-for="Name"></span><br>
+            </div>
+            <div class="col-lg-6">
+                <label class="form-label" asp-for="Address"></label><br>
+                <input class="form-control" asp-for="Address">
+                <span asp-validation-for="Address"></span><br>
+            </div>
+            <div class="col-lg-6">
+                <label class="form-label" asp-for="PhoneNo"></label><br>
+                <input class="form-control" asp-for="PhoneNo">
+                <span asp-validation-for="PhoneNo"></span><br>
+            </div>
+            <div class="col-lg-6">
+                <label class="form-label" asp-for="Password"></label><br>
+                <input class="form-control" asp-for="Password">
+                <span asp-validation-for="Password"></span><br>
+            </div>
+            <div class="col-lg-12">
+                <label class="form-label" asp-for="Degree"></label><br>
+                <select class="form-control" asp-for="Degree">
+                    <option>SE</option>
+                    <option>CS</option>
+                    <option>IT</option>
+                </select>
+                <span asp-validation-for="Degree"></span><br>
+            </div>
+        </div>
+
+        <input class="btn btn-primary" type="submit" value="Update" />
+    </form>
+</div>

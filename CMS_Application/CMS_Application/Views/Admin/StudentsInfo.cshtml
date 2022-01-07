@@ -1,0 +1,46 @@
+﻿
+
+
+
+@using CMS_Applicaion.Models
+@{
+    Layout = "~/Views/Shared/_Layout4.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-6">
+        <h2 class="ml-3 text-primary">All Students</h2>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-5 d-flex align-items-end justify-content-end mb-3">
+        <a class="btn btn-info" asp-controller="Admin" asp-action="AddStudent" asp-route-id="@Model.Id">Add Student</a>
+    </div>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-12 px-3">
+    <table class="table table-striped table-light">
+        <thead>
+            <tr class="bg-primary text-white">
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone No</th>
+                <th scope="col">Degree</th>
+                <th scope="col">Roll No</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Student s in Model.students)
+            {
+                <tr>
+                    <td>@s.Name</td>
+                    <td>@s.Address</td>
+                    <td>@s.PhoneNo</td>
+                    <td>@s.Degree</td>
+                    <td>@s.RollNo</td>
+                    <td><a class="btn btn-info" asp-controller="Admin" asp-action="EditStudent" asp-route-aid="@Model.Id" asp-route-id="@s.Id">Edit</a></td>
+                    <td><a class="btn btn-danger" asp-controller="Admin" asp-action="RemoveStudent" asp-route-aid="@Model.Id" asp-route-id="@s.Id">Remove</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

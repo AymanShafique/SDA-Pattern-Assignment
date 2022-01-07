@@ -1,0 +1,57 @@
+﻿@using CMS_Applicaion.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="ml-3 text-primary">Add Course</h2>
+<div class="col-sm-12 col-md-12 col-lg-12 px-3">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="card my-2 bg-light">
+                    <div class="card-body text-dark">
+                        <a>
+                        <h4 class="text-dark">Class Segessions : </h4>
+                        
+                        <table class="table table-striped table-light">
+                            <thead>
+                                <tr class="bg-primary text-white">
+                                    <th>Class Id</th>
+                                    <th>Course</th>
+                                    <th >Degree</th>
+                                    <th >Batch</th>
+                                    <th >Section</th>
+                                    <th >Instructor</th>
+                                    <th >Send Request</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (Class c in Model.Courses)
+                                {
+                                <tr>
+                                    <td>@c.Id</td>
+                                    <td>@c.Name</td>
+                                    <td>@Model.Degree</td>
+                                    <td>F18</td>
+                                    <td>Morning</td>
+                                    <td>@c.Instructor.Name</td>
+                                    <td>
+                                        <button id="Add_btn" class="btn btn-info" onclick="AddCourse()">Add</button>                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
+<script>
+    function AddCourse() {
+        var c = "Request Sent";
+        var btn = document.getElementById("Add_btn");
+        btn.innerText = c;
+    }
+</script>
+

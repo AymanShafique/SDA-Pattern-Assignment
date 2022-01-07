@@ -1,0 +1,27 @@
+﻿@using CMS_Applicaion.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="ml-3 text-primary">Announcements</h2>
+<div class="col-sm-10 col-md-10 col-lg-10 px-3">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="card my-2 bg-light">
+                <div class="card-body text-dark">
+                    @foreach (Class c in Model.Courses)
+                    {
+                        <h4>Course : @c.Name</h4>
+                        <h4>Instructor : @c.Instructor.Name</h4>
+                        <h4>@c.Announcement</h4>
+                    }
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
